@@ -7,9 +7,8 @@ public struct PostListView: View {
         NavigationView {
             ScrollView {
                 ForEach(1...10, id: \.self) { count in
-                    PostContentTwitterView()
+                    PostInstagramView()
                 }
-                .padding(.init(top: 0, leading: 16, bottom: 0, trailing: 16))
             }
             .navigationViewStyle(DefaultNavigationViewStyle())
             .navigationTitle("Post Lists")
