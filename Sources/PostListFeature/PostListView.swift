@@ -8,6 +8,7 @@ public struct PostListView: View {
             ScrollView {
                 ForEach(1...3, id: \.self) { count in
                     PostTwitterView()
+                    PostYouTubeView()
                     PostInstagramView()
                 }
             }

@@ -4,6 +4,7 @@ import SwiftUI
 public struct PostMemberInfoView: View {
     
     var mediaType: MediaType
+    var name: String
     var imageUrl: String {
         switch mediaType {
         case .twitter:
@@ -15,8 +16,9 @@ public struct PostMemberInfoView: View {
         }
     }
     
-    public init(mediaType: MediaType) {
+    public init(mediaType: MediaType, name: String) {
         self.mediaType = mediaType
+        self.name = name
     }
     
     public var body: some View {
@@ -24,7 +26,7 @@ public struct PostMemberInfoView: View {
             CacheableImage(imageUrl)
                 .frame(width: 44, height: 44)
                 .clipShape(Circle())
-            Text("yukos0520")
+            Text(name)
             Spacer()
         }
     }
@@ -33,7 +35,7 @@ public struct PostMemberInfoView: View {
 struct PostMemberInfoViewPreview: PreviewProvider {
     static var previews: some View {
         ForEach(MediaType.allCases, id: \.self) { mediaType in
-            PostMemberInfoView(mediaType: mediaType)
+            PostMemberInfoView(mediaType: mediaType, name: "yukos0520")
                 .previewLayout(.sizeThatFits)
         }
     }
