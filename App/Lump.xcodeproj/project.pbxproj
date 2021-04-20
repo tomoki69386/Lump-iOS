@@ -9,16 +9,13 @@
 /* Begin PBXBuildFile section */
 		606CA3CC262F6962006A97DC /* PostListFeature in Frameworks */ = {isa = PBXBuildFile; productRef = 606CA3CB262F6962006A97DC /* PostListFeature */; };
 		606F71AF262F5E230029FC42 /* LumpApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606F71AE262F5E230029FC42 /* LumpApp.swift */; };
-		606F71B1262F5E230029FC42 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606F71B0262F5E230029FC42 /* ContentView.swift */; };
 		606F71B3262F5E230029FC42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 606F71B2262F5E230029FC42 /* Assets.xcassets */; };
 		606F71B6262F5E230029FC42 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 606F71B5262F5E230029FC42 /* Preview Assets.xcassets */; };
-		606F71BE262F5FA30029FC42 /* Components in Frameworks */ = {isa = PBXBuildFile; productRef = 606F71BD262F5FA30029FC42 /* Components */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		606F71AC262F5E230029FC42 /* Lump.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lump.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		606F71AE262F5E230029FC42 /* LumpApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LumpApp.swift; sourceTree = "<group>"; };
-		606F71B0262F5E230029FC42 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		606F71B2262F5E230029FC42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		606F71B5262F5E230029FC42 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		606F71B7262F5E230029FC42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -29,7 +26,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				606F71BE262F5FA30029FC42 /* Components in Frameworks */,
 				606CA3CC262F6962006A97DC /* PostListFeature in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -41,7 +37,6 @@
 			isa = PBXGroup;
 			children = (
 				606F71AE262F5E230029FC42 /* LumpApp.swift */,
-				606F71B0262F5E230029FC42 /* ContentView.swift */,
 				606F71B2262F5E230029FC42 /* Assets.xcassets */,
 				606F71B7262F5E230029FC42 /* Info.plist */,
 				606F71B4262F5E230029FC42 /* Preview Content */,
@@ -98,7 +93,6 @@
 			);
 			name = Lump;
 			packageProductDependencies = (
-				606F71BD262F5FA30029FC42 /* Components */,
 				606CA3CB262F6962006A97DC /* PostListFeature */,
 			);
 			productName = Lump;
@@ -154,7 +148,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				606F71B1262F5E230029FC42 /* ContentView.swift in Sources */,
 				606F71AF262F5E230029FC42 /* LumpApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -349,10 +342,6 @@
 		606CA3CB262F6962006A97DC /* PostListFeature */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = PostListFeature;
-		};
-		606F71BD262F5FA30029FC42 /* Components */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Components;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

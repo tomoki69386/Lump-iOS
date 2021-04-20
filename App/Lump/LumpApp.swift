@@ -1,5 +1,4 @@
 import SwiftUI
-import Components
 import PostListFeature
 
 @main
