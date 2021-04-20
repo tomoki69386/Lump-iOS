@@ -6,7 +6,8 @@ public struct PostListView: View {
     public var body: some View {
         NavigationView {
             ScrollView {
-                ForEach(1...10, id: \.self) { count in
+                ForEach(1...3, id: \.self) { count in
+                    PostTwitterView()
                     PostInstagramView()
                 }
             }
