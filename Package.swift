@@ -10,6 +10,7 @@ let package = Package(
         .iOS(.v14),
     ],
     products: [
+        .library(name: "AppFeature", targets: ["AppFeature"]),
         .library(name: "GroupListFeature", targets: ["GroupListFeature"]),
         .library(name: "PostListFeature", targets: ["PostListFeature"]),
         .library(name: "Components", targets: ["Components"]),
@@ -18,6 +19,7 @@ let package = Package(
     dependencies: [
     ],
     targets: [
+        .target(name: "AppFeature", dependencies: ["GroupListFeature", "PostListFeature"]),
         .target(name: "GroupListFeature", dependencies: ["Entity"]),
         .target(name: "PostListFeature", dependencies: ["Entity", "Components"]),
         

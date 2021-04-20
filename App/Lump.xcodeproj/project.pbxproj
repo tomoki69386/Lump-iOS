@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		606CA3CC262F6962006A97DC /* PostListFeature in Frameworks */ = {isa = PBXBuildFile; productRef = 606CA3CB262F6962006A97DC /* PostListFeature */; };
+		606CA3D1262F78A2006A97DC /* AppFeature in Frameworks */ = {isa = PBXBuildFile; productRef = 606CA3D0262F78A2006A97DC /* AppFeature */; };
 		606F71AF262F5E230029FC42 /* LumpApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606F71AE262F5E230029FC42 /* LumpApp.swift */; };
 		606F71B3262F5E230029FC42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 606F71B2262F5E230029FC42 /* Assets.xcassets */; };
 		606F71B6262F5E230029FC42 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 606F71B5262F5E230029FC42 /* Preview Assets.xcassets */; };
@@ -26,7 +26,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				606CA3CC262F6962006A97DC /* PostListFeature in Frameworks */,
+				606CA3D1262F78A2006A97DC /* AppFeature in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,7 +93,7 @@
 			);
 			name = Lump;
 			packageProductDependencies = (
-				606CA3CB262F6962006A97DC /* PostListFeature */,
+				606CA3D0262F78A2006A97DC /* AppFeature */,
 			);
 			productName = Lump;
 			productReference = 606F71AC262F5E230029FC42 /* Lump.app */;
@@ -339,9 +339,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		606CA3CB262F6962006A97DC /* PostListFeature */ = {
+		606CA3D0262F78A2006A97DC /* AppFeature */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = PostListFeature;
+			productName = AppFeature;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

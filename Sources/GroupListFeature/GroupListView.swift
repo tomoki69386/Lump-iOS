@@ -1,8 +1,10 @@
 import SwiftUI
 
-@available(OSX 11.0, *)
-struct GroupListView: View {
-    var body: some View {
+public struct GroupListView: View {
+    
+    public init() { }
+    
+    public var body: some View {
         NavigationView {
             ScrollView {
                 ForEach(1...10, id: \.self) { count in
