@@ -21,4 +21,8 @@ jobs:
         run: bundle install --path vendor/bundle
 
       - name: deploy
+        env:
+          ASC_KEY_ID: ${{ secrets.DANGER_GITHUB_API_TOKEN }}
+          ASC_ISSUER_ID: ${{ secrets.DANGER_GITHUB_API_TOKEN }}
+          ASC_KEY_CONTENT: ${{ secrets.DANGER_GITHUB_API_TOKEN }}
         run: bundle exec fastlane deploy_testflight
