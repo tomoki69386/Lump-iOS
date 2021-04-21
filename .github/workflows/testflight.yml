@@ -22,7 +22,7 @@ jobs:
 
       - name: deploy
         env:
-          ASC_KEY_ID: ${{ secrets.DANGER_GITHUB_API_TOKEN }}
-          ASC_ISSUER_ID: ${{ secrets.DANGER_GITHUB_API_TOKEN }}
-          ASC_KEY_CONTENT: ${{ secrets.DANGER_GITHUB_API_TOKEN }}
+          ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+          ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+          ASC_KEY_CONTENT: ${{ secrets.ASC_KEY_CONTENT }}
         run: bundle exec fastlane deploy_testflight
