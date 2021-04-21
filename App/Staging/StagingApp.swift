@@ -2,7 +2,7 @@ import SwiftUI
 import AppFeature
 
 @main
-struct LumpApp: App {
+struct StagingApp: App {
     var body: some Scene {
         WindowGroup {
             AppView()
