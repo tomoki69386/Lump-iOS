@@ -14,6 +14,7 @@ let package = Package(
         .library(name: "GroupListFeature", targets: ["GroupListFeature"]),
         .library(name: "GroupTimelineFeature", targets: ["GroupTimelineFeature"]),
         .library(name: "GroupCreateFeature", targets: ["GroupCreateFeature"]),
+        .library(name: "SettingFeature", targets: ["SettingFeature"]),
         .library(name: "Components", targets: ["Components"]),
         .library(name: "Entity", targets: ["Entity"])
     ],
@@ -24,6 +25,7 @@ let package = Package(
         .target(name: "GroupListFeature", dependencies: ["Entity"]),
         .target(name: "GroupTimelineFeature", dependencies: ["Entity", "Components"]),
         .target(name: "GroupCreateFeature", dependencies: ["Entity", "Components"]),
+        .target(name: "SettingFeature"),
         
         .target(name: "Components", dependencies: ["Entity"]),
         
