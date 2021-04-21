@@ -1,4 +1,4 @@
-#if !os(macOS)
+import Cache
 import UIKit
 import SwiftUI
 import Combine
@@ -12,13 +12,24 @@ public struct CacheableImage: View {
         init() {
             let fetchImageStream = url.flatMap { url -> Future<UIImage?, Error> in
                 return Future<UIImage?, Error> { promise in
-                    URLSession.shared.dataTask(with: url) { (data, _, _) in
-                        guard let data = data else { return promise(.success(nil)) }
-                        DispatchQueue.main.async {
-                            promise(.success(UIImage(data: data)))
+                    
+                    if let image = UIImageCache.shared.load(for: url.absoluteString) {
+                        return promise(.success(image))
+                    } else {
+                        URLSession.shared.dataTask(with: url) { (data, _, _) in
+                            guard let data = data else {
+                                return promise(.success(nil))
+                            }
+                            DispatchQueue.main.async {
+                                guard let image = UIImage(data: data) else {
+                                    return promise(.success(nil))
+                                }
+                                UIImageCache.shared.store(image, for: url.absoluteString)
+                                promise(.success(image))
+                            }
                         }
+                        .resume()
                     }
-                    .resume()
                 }
             }
             .catch { _ in Just(nil) }
@@ -55,5 +66,3 @@ struct CacheableImagePreviews: PreviewProvider {
             .previewLayout(.sizeThatFits)
     }
 }
-
-#endif

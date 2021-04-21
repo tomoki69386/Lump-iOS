@@ -1,5 +1,6 @@
 import Entity
 import SwiftUI
+import CacheableImage
 
 public struct PostMemberInfoView: View {
     

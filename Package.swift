@@ -16,7 +16,9 @@ let package = Package(
         .library(name: "GroupCreateFeature", targets: ["GroupCreateFeature"]),
         .library(name: "SettingFeature", targets: ["SettingFeature"]),
         .library(name: "Components", targets: ["Components"]),
-        .library(name: "Entity", targets: ["Entity"])
+        .library(name: "Entity", targets: ["Entity"]),
+        .library(name: "Cache", targets: ["Cache"]),
+        .library(name: "CacheableImage", targets: ["CacheableImage"])
     ],
     dependencies: [
     ],
@@ -27,9 +29,14 @@ let package = Package(
         .target(name: "GroupCreateFeature", dependencies: ["Entity", "Components"]),
         .target(name: "SettingFeature"),
         
-        .target(name: "Components", dependencies: ["Entity"]),
+        .target(name: "Components", dependencies: ["Entity", "CacheableImage"]),
         
         .target(name: "Entity"),
-        .testTarget(name: "EntityTests")
+        .testTarget(name: "EntityTests"),
+        
+        .target(name: "Cache"),
+        .testTarget(name: "CacheTests"),
+        
+        .target(name: "CacheableImage", dependencies: ["Cache"])
     ]
 )
