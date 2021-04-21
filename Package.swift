@@ -12,16 +12,18 @@ let package = Package(
     products: [
         .library(name: "AppFeature", targets: ["AppFeature"]),
         .library(name: "GroupListFeature", targets: ["GroupListFeature"]),
-        .library(name: "PostListFeature", targets: ["PostListFeature"]),
+        .library(name: "GroupTimelineFeature", targets: ["GroupTimelineFeature"]),
+        .library(name: "GroupCreateFeature", targets: ["GroupCreateFeature"]),
         .library(name: "Components", targets: ["Components"]),
         .library(name: "Entity", targets: ["Entity"])
     ],
     dependencies: [
     ],
     targets: [
-        .target(name: "AppFeature", dependencies: ["GroupListFeature", "PostListFeature"]),
+        .target(name: "AppFeature", dependencies: ["GroupListFeature", "GroupTimelineFeature", "GroupCreateFeature"]),
         .target(name: "GroupListFeature", dependencies: ["Entity"]),
-        .target(name: "PostListFeature", dependencies: ["Entity", "Components"]),
+        .target(name: "GroupTimelineFeature", dependencies: ["Entity", "Components"]),
+        .target(name: "GroupCreateFeature", dependencies: ["Entity", "Components"]),
         
         .target(name: "Components", dependencies: ["Entity"]),
         

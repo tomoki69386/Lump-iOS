@@ -1,8 +1,10 @@
 import SwiftUI
 import Components
 
-public struct PostListView: View {
+public struct GroupTimelineView: View {
+    
     public init() { }
+    
     public var body: some View {
         NavigationView {
             ScrollView {
@@ -13,13 +15,13 @@ public struct PostListView: View {
                 }
             }
             .navigationViewStyle(DefaultNavigationViewStyle())
-            .navigationTitle("Post Lists")
+            .navigationTitle("Timeline")
         }
     }
 }
 
-struct PostListViewPreviews: PreviewProvider {
+struct GroupTimelineViewPreview: PreviewProvider {
     static var previews: some View {
-        PostListView()
+        GroupTimelineView()
     }
 }
