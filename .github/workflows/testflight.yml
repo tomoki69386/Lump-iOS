@@ -11,10 +11,8 @@ jobs:
 
       - uses: ruby/setup-ruby@v1
         with:
+          ruby-version: 2.6.3p62
           bundler-cache: true
-
-      - name: bundle install
-        run: bundle install --path vendor/bundle
 
       - name: deploy
         env:
