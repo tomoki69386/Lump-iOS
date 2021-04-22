@@ -36,6 +36,8 @@ platform :ios do
       app_identifier: ["com.tomoki-sun.app.ios.Lump.Staging"]
     )
 
+    increment_build_number(xcodeproj: "App/Staging.xcodeproj")
+
     gym(
       clean: true,
       scheme: "Staging",
@@ -43,9 +45,9 @@ platform :ios do
       export_method: "app-store"
     )
 
-    upload_to_app_store(
+    upload_to_testflight(
       api_key: api_key,
-      precheck_include_in_app_purchases: false
+      skip_waiting_for_build_processing: true
     )
   end
 end
