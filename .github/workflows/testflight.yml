@@ -9,15 +9,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2.0.0
 
-      - uses: actions/cache@v1.0.3
-        id: bundleCache
+      - uses: ruby/setup-ruby@v1
         with:
-          path: vendor/bundle
-          key: gem-${{ hashFiles(format('{0}{1}', github.workspace, '/Gemfile.lock')) }}
-          restore-keys: gem-${{ hashFiles(format('{0}{1}', github.workspace, '/Gemfile.lock')) }}
+          bundler-cache: true
 
       - name: bundle install
-        if: steps.bundleCache.outputs.cache-hit != 'true'
         run: bundle install --path vendor/bundle
 
       - name: deploy
