@@ -69,7 +69,7 @@ platform :ios do
     set_info_plist_value(
       path: './App/Staging/Info.plist',
       key: 'CFBundleVersion',
-      value: `git rev-parse --short HEAD`
+      value: `git rev-parse --short HEAD`.to_i(16)
     )
   end
 end
