@@ -1,0 +1,25 @@
+name: testflight
+
+on: [push]
+
+jobs:
+  deploy:
+    runs-on: macOS-latest
+
+    steps:
+      - uses: actions/checkout@v2.0.0
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.6.3
+          bundler-cache: true
+
+      - name: deploy
+        env:
+          ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+          ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+          ASC_KEY_CONTENT: ${{ secrets.ASC_KEY_CONTENT }}
+          USERNAME: ${{ secrets.USERNAME }}
+          PERSONAL_GITHUB_ACCESS_TOKEN: ${{ secrets.PERSONAL_GITHUB_ACCESS_TOKEN }}
+          MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
+        run: bundle exec fastlane deploy_testflight

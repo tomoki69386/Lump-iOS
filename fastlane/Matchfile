@@ -1,0 +1,9 @@
+git_url("https://github.com/tomoki69386/certificates.git")
+
+type("appstore")
+
+app_identifier([
+  "com.tomoki-sun.app.ios.Lump.Staging"
+])
+
+username("developertomokisun@gmail.com")
