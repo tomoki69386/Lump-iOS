@@ -44,14 +44,14 @@ platform :ios do
     build_app(
       workspace: "Lump.xcworkspace",
       scheme: "Staging",
-      changelog: `git log -1 --pretty=%B`,
       export_options: {
         method: "app-store",
       }
     )
 
     upload_to_testflight(
-      api_key: api_key
+      api_key: api_key,
+      changelog: `git log -1 --pretty=%B`
     )
   end
 
