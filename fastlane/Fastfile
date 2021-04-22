@@ -27,10 +27,13 @@ platform :ios do
       in_house: false
     )
 
+    basic_authorization_token = Base64.strict_encode64("#{ENV["USERNAME"]}:#{ENV["PERSONAL_GITHUB_ACCESS_TOKEN"]}")
+
     match(
+      git_basic_authorization: basic_authorization_token,
       api_key: api_key,
       type: "appstore",
-      app_identifier: [""]
+      app_identifier: ["com.tomoki-sun.app.ios.Lump.Staging"]
     )
 
     gym(
