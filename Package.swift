@@ -35,7 +35,7 @@ let package = Package(
         .testTarget(name: "EntityTests"),
         
         .target(name: "Cache"),
-        .testTarget(name: "CacheTests"),
+        .testTarget(name: "CacheTests", dependencies: ["Cache"]),
         
         .target(name: "CacheableImage", dependencies: ["Cache"])
     ]
