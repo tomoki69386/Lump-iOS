@@ -19,3 +19,6 @@ format:
 		./App/ \
 		./Package.swift \
 		./Sources/
+
+open:
+	open Lump.xcworkspace/
