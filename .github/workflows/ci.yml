@@ -1,0 +1,12 @@
+name: CI
+
+on: [push]
+
+jobs:
+  test:
+    name: macOS
+    runs-on: macOS-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run tests
+      run: make test

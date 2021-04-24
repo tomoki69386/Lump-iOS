@@ -21,6 +21,7 @@ let package = Package(
         .library(name: "CacheableImage", targets: ["CacheableImage"])
     ],
     dependencies: [
+        .package(name: "SnapshotTesting", url: "https://github.com/pointfreeco/swift-snapshot-testing.git", .exact("1.8.2"))
     ],
     targets: [
         .target(name: "AppFeature", dependencies: ["GroupListFeature", "GroupTimelineFeature", "GroupCreateFeature"]),
@@ -32,10 +33,21 @@ let package = Package(
         .target(name: "Components", dependencies: ["Entity", "CacheableImage"]),
         
         .target(name: "Entity"),
-        .testTarget(name: "EntityTests"),
+        .testTarget(
+            name: "EntityTests",
+            dependencies: [
+                .product(name: "SnapshotTesting", package: "SnapshotTesting"),
+            ]
+        ),
         
         .target(name: "Cache"),
-        .testTarget(name: "CacheTests"),
+        .testTarget(
+            name: "CacheTests",
+            dependencies: [
+                "Cache",
+                .product(name: "SnapshotTesting", package: "SnapshotTesting"),
+            ]
+        ),
         
         .target(name: "CacheableImage", dependencies: ["Cache"])
     ]
