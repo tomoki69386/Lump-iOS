@@ -11,6 +11,7 @@ let package = Package(
   ],
   products: [
     .library(name: "AppFeature", targets: ["AppFeature"]),
+    .library(name: "AppTabFeature", targets: ["AppTabFeature"]),
     .library(name: "GroupListFeature", targets: ["GroupListFeature"]),
     .library(name: "GroupTimelineFeature", targets: ["GroupTimelineFeature"]),
     .library(name: "GroupCreateFeature", targets: ["GroupCreateFeature"]),
@@ -29,7 +30,9 @@ let package = Package(
   ],
   targets: [
     .target(
-      name: "AppFeature",
+      name: "AppFeature", dependencies: ["AppTabFeature"]),
+    .target(
+      name: "AppTabFeature",
       dependencies: ["GroupListFeature", "GroupTimelineFeature", "GroupCreateFeature"]),
     .target(name: "GroupListFeature", dependencies: ["Entity"]),
     .target(name: "GroupTimelineFeature", dependencies: ["Entity", "Components"]),
