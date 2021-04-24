@@ -1,22 +1,22 @@
 import SwiftUI
 
 public struct SearchTextField: View {
-  
+
   @State var text = ""
-  
-  public init() { }
-  
+
+  public init() {}
+
   public var body: some View {
     HStack {
       Image(systemName: "magnifyingglass")
         .foregroundColor(Color(UIColor.tertiaryLabel))
         .padding(.leading, 16)
-      
+
       PlaceholderTextField(
         placeholder: Text("Search"),
         text: $text,
         onEditingChanged: { _ in },
-        onCommit: { }
+        onCommit: {}
       )
     }
     .frame(height: 50)

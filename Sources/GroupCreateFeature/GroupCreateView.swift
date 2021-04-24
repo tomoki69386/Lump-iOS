@@ -1,5 +1,5 @@
-import SwiftUI
 import Component
+import SwiftUI
 
 public struct GroupCreateView: View {
 

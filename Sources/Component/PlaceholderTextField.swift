@@ -1,12 +1,12 @@
 import SwiftUI
 
 public struct PlaceholderTextField: View {
-  
+
   public var placeholder: Text
   @Binding public var text: String
   public var onEditingChanged: (Bool) -> Void
   public var onCommit: () -> Void
-  
+
   public init(
     placeholder: Text,
     text: Binding<String>,
@@ -18,7 +18,7 @@ public struct PlaceholderTextField: View {
     self.onEditingChanged = onEditingChanged
     self.onCommit = onCommit
   }
-  
+
   public var body: some View {
     ZStack(alignment: .leading) {
       if text.isEmpty {
@@ -47,16 +47,16 @@ struct PlaceholderTextFieldPreviews: PreviewProvider {
         placeholder: Text("Search"),
         text: $text,
         onEditingChanged: { _ in },
-        onCommit: { }
+        onCommit: {}
       )
       .previewLayout(.sizeThatFits)
       .previewDisplayName("テキストあり")
-      
+
       PlaceholderTextField(
         placeholder: Text("Search"),
         text: $textEmpty,
         onEditingChanged: { _ in },
-        onCommit: { }
+        onCommit: {}
       )
       .previewLayout(.sizeThatFits)
       .previewDisplayName("テキストなし")

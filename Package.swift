@@ -44,7 +44,7 @@ let package = Package(
       name: "ComponentTests",
       dependencies: [
         "Component",
-        .product(name: "SnapshotTesting", package: "SnapshotTesting")
+        .product(name: "SnapshotTesting", package: "SnapshotTesting"),
       ],
       exclude: [
         "__Snapshots__"
