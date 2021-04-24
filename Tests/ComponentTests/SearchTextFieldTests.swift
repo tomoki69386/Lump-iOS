@@ -15,7 +15,7 @@ class SearchTextFieldTests: XCTestCase {
         .padding(.all, 20)
         .frame(width: 375)
         .previewLayout(.sizeThatFits),
-      as: .image
+      as: .image(precision: 0.9)
     )
   }
 }
