@@ -16,7 +16,7 @@ let package = Package(
     .library(name: "GroupTimelineFeature", targets: ["GroupTimelineFeature"]),
     .library(name: "GroupCreateFeature", targets: ["GroupCreateFeature"]),
     .library(name: "SettingFeature", targets: ["SettingFeature"]),
-    .library(name: "Components", targets: ["Components"]),
+    .library(name: "Component", targets: ["Component"]),
     .library(name: "Entity", targets: ["Entity"]),
     .library(name: "Cache", targets: ["Cache"]),
     .library(name: "CacheableImage", targets: ["CacheableImage"]),
@@ -35,11 +35,21 @@ let package = Package(
       name: "AppTabFeature",
       dependencies: ["GroupListFeature", "GroupTimelineFeature", "GroupCreateFeature"]),
     .target(name: "GroupListFeature", dependencies: ["Entity"]),
-    .target(name: "GroupTimelineFeature", dependencies: ["Entity", "Components"]),
-    .target(name: "GroupCreateFeature", dependencies: ["Entity", "Components"]),
+    .target(name: "GroupTimelineFeature", dependencies: ["Entity", "Component"]),
+    .target(name: "GroupCreateFeature", dependencies: ["Entity", "Component"]),
     .target(name: "SettingFeature"),
 
-    .target(name: "Components", dependencies: ["Entity", "CacheableImage"]),
+    .target(name: "Component", dependencies: ["Entity", "CacheableImage"]),
+    .testTarget(
+      name: "ComponentTests",
+      dependencies: [
+        "Component",
+        .product(name: "SnapshotTesting", package: "SnapshotTesting")
+      ],
+      exclude: [
+        "__Snapshots__"
+      ]
+    ),
 
     .target(name: "Entity"),
     .testTarget(

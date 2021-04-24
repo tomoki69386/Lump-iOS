@@ -1,20 +1,14 @@
 import SwiftUI
+import Component
 
 public struct GroupCreateView: View {
-
-  @State var text = "" {
-    didSet {
-      print(text)
-    }
-  }
 
   public init() {}
 
   public var body: some View {
     VStack {
       Spacer()
-      TextField("username", text: $text)
-        .font(.title)
+      SearchTextField()
         .padding(.all, 20)
       Spacer()
 
@@ -44,7 +38,6 @@ public struct GroupCreateView: View {
               .font(.title)
               .background(Color(UIColor.systemPink))
               .clipShape(Circle())
-              .disabled(text.isEmpty)
           })
 
       }

@@ -1,4 +1,4 @@
-import Components
+import Component
 import SwiftUI
 
 public struct GroupTimelineView: View {
