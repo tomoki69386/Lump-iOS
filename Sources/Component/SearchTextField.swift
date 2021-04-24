@@ -11,9 +11,13 @@ public struct SearchTextField: View {
       Image(systemName: "magnifyingglass")
         .foregroundColor(Color(UIColor.tertiaryLabel))
         .padding(.leading, 16)
-      TextField("Search", text: $text)
-        .foregroundColor(Color(UIColor.tertiaryLabel))
-        .font(.title2)
+      
+      PlaceholderTextField(
+        placeholder: Text("Search"),
+        text: $text,
+        onEditingChanged: { _ in },
+        onCommit: { }
+      )
     }
     .frame(height: 50)
     .background(Color(UIColor.systemGray6))
