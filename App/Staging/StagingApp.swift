@@ -1,11 +1,11 @@
-import SwiftUI
 import AppFeature
+import SwiftUI
 
 @main
 struct StagingApp: App {
-    var body: some Scene {
-        WindowGroup {
-            AppView()
-        }
+  var body: some Scene {
+    WindowGroup {
+      AppView()
     }
+  }
 }

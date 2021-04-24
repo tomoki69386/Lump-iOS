@@ -1,37 +1,37 @@
-import SwiftUI
+import GroupCreateFeature
 import GroupListFeature
 import GroupTimelineFeature
-import GroupCreateFeature
+import SwiftUI
 
 public struct AppView: View {
-    
-    public init() { }
-    
-    public var body: some View {
-        TabView {
-            GroupListView()
-                .tag(1)
-                .tabItem {
-                    Text("Group")
-                }
-            
-            GroupTimelineView()
-                .tag(1)
-                .tabItem {
-                    Text("Timeline")
-                }
-            
-            GroupCreateView()
-                .tag(3)
-                .tabItem {
-                    Text("Create")
-                }
+
+  public init() {}
+
+  public var body: some View {
+    TabView {
+      GroupListView()
+        .tag(1)
+        .tabItem {
+          Text("Group")
+        }
+
+      GroupTimelineView()
+        .tag(1)
+        .tabItem {
+          Text("Timeline")
+        }
+
+      GroupCreateView()
+        .tag(3)
+        .tabItem {
+          Text("Create")
         }
     }
+  }
 }
 
 struct AppViewPreview: PreviewProvider {
-    static var previews: some View {
-        AppView()
-    }
+  static var previews: some View {
+    AppView()
+  }
 }
