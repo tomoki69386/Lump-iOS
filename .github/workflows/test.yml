@@ -5,8 +5,8 @@ on: [push, pull_request]
 jobs:
   mac:
     name: macOS
-     runs-on: macOS-latest
-     steps:
-     - uses: actions/checkout@v2
-     - name: Run tests
-       run: make test
+    runs-on: macOS-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run tests
+      run: make test
