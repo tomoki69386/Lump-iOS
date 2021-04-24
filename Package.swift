@@ -43,7 +43,11 @@ let package = Package(
     .testTarget(
       name: "ComponentTests",
       dependencies: [
+        "Component",
         .product(name: "SnapshotTesting", package: "SnapshotTesting")
+      ],
+      exclude: [
+        "__Snapshots__"
       ]
     ),
 
