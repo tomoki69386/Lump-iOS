@@ -10,3 +10,12 @@ test-client:
 		-workspace Lump.xcworkspace \
 		-scheme Staging \
 		-destination platform="$(PLATFORM_IOS)"
+
+format:
+	@swift format \
+		--ignore-unparsable-files \
+		--in-place \
+		--recursive \
+		./App/ \
+		./Package.swift \
+		./Sources/
