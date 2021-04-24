@@ -40,6 +40,12 @@ let package = Package(
     .target(name: "SettingFeature"),
 
     .target(name: "Component", dependencies: ["Entity", "CacheableImage"]),
+    .testTarget(
+      name: "ComponentTests",
+      dependencies: [
+        .product(name: "SnapshotTesting", package: "SnapshotTesting")
+      ]
+    ),
 
     .target(name: "Entity"),
     .testTarget(
