@@ -21,10 +21,11 @@ let package = Package(
     .library(name: "CacheableImage", targets: ["CacheableImage"]),
   ],
   dependencies: [
-    .package(url: "https://github.com/pointfreeco/swift-composable-architecture.git", .branch("iso")),
+    .package(
+      url: "https://github.com/pointfreeco/swift-composable-architecture.git", .branch("iso")),
     .package(
       name: "SnapshotTesting", url: "https://github.com/pointfreeco/swift-snapshot-testing.git",
-      .exact("1.8.2"))
+      .exact("1.8.2")),
   ],
   targets: [
     .target(
