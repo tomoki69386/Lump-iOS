@@ -16,7 +16,7 @@ public struct AppTabView: View {
         }
 
       GroupTimelineView()
-        .tag(1)
+        .tag(2)
         .tabItem {
           Text("Timeline")
         }
