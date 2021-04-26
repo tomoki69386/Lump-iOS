@@ -1,6 +1,5 @@
 import GroupCreateFeature
 import GroupListFeature
-import GroupTimelineFeature
 import SwiftUI
 
 public struct AppTabView: View {
@@ -14,15 +13,9 @@ public struct AppTabView: View {
         .tabItem {
           Text("Group")
         }
-
-      GroupTimelineView()
-        .tag(2)
-        .tabItem {
-          Text("Timeline")
-        }
-
+      
       GroupCreateView()
-        .tag(3)
+        .tag(2)
         .tabItem {
           Text("Create")
         }
