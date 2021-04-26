@@ -13,7 +13,7 @@ public struct AppTabView: View {
         .tabItem {
           Text("Group")
         }
-      
+
       GroupCreateView()
         .tag(2)
         .tabItem {

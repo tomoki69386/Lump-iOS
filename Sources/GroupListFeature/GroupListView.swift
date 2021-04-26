@@ -1,6 +1,6 @@
-import SwiftUI
-import SettingFeature
 import GroupTimelineFeature
+import SettingFeature
+import SwiftUI
 
 public struct GroupListView: View {
 
