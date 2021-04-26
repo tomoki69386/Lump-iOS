@@ -33,8 +33,20 @@ let package = Package(
       name: "AppFeature", dependencies: ["AppTabFeature"]),
     .target(
       name: "AppTabFeature",
-      dependencies: ["GroupListFeature", "GroupTimelineFeature", "GroupCreateFeature"]),
-    .target(name: "GroupListFeature", dependencies: ["Entity"]),
+      dependencies: [
+        "GroupListFeature",
+        "GroupCreateFeature"
+      ]
+    ),
+    .target(
+      name: "GroupListFeature",
+      dependencies: [
+        "Entity",
+        "SettingFeature",
+        "GroupTimelineFeature",
+        .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
+      ]
+    ),
     .target(name: "GroupTimelineFeature", dependencies: ["Entity", "Component"]),
     .target(name: "GroupCreateFeature", dependencies: ["Entity", "Component"]),
     .target(name: "SettingFeature"),
