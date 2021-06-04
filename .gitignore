@@ -3,4 +3,4 @@
 /Packages
 xcuserdata/
 .swiftpm
-vendor
+vendor/bundle
