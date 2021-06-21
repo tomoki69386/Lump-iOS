@@ -4,3 +4,4 @@
 xcuserdata/
 .swiftpm
 vendor/bundle
+.swiftpm/xcode/xcuserdata
