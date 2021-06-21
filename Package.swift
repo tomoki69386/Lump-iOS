@@ -33,7 +33,7 @@ let package = Package(
     .target(
       name: "AppTabFeature",
       dependencies: [
-        "GroupListFeature",
+        "GroupListFeature"
       ]
     ),
     .target(
