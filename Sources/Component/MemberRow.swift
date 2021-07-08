@@ -18,6 +18,14 @@ public struct MemberRow: View {
     }
   }
   
+  public init(
+    mediaType: MediaType,
+    name: String
+  ) {
+    self.mediaType = mediaType
+    self.name = name
+  }
+  
   public var body: some View {
     HStack(spacing: 8) {
       CircleImage(imageUrlString: imageUrl)
