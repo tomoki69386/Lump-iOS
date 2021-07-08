@@ -29,7 +29,7 @@ let package = Package(
     .target(name: "AppFeature", dependencies: []),
     .target(name: "SettingFeature"),
 
-    .target(name: "Component", dependencies: ["Entity", "CacheableImage"]),
+    .target(name: "Component", dependencies: ["Entity", "CacheableImage", "Styleguide"]),
     .testTarget(
       name: "ComponentTests",
       dependencies: [
