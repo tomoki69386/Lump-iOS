@@ -39,7 +39,7 @@ private struct Navigation<Content: View>: View {
           .font(.system(size: 25, weight: .black, design: .default))
         Spacer()
       }
-      .padding([.leading, .trailing], 12)
+      .padding([.top, .leading, .trailing], 12)
 
       content
 
