@@ -11,14 +11,14 @@ extension View {
     backgroundColor: Color = .white,
     title: String,
     presentationStyle: NavigationPresentationStyle,
-    willPositive: @escaping () -> Void,
+    positive: @escaping () -> Void,
     onDismiss: @escaping () -> Void
   ) -> some View {
     Navigation(
       backgroundColor: backgroundColor,
       title: title,
       presentationStyle: presentationStyle,
-      willPositive: willPositive,
+      positive: positive,
       onDismiss: onDismiss,
       content: self
     )
@@ -30,7 +30,7 @@ private struct Navigation<Content: View>: View {
   let backgroundColor: Color
   let title: String
   let presentationStyle: NavigationPresentationStyle
-  let willPositive: () -> Void
+  let positive: () -> Void
   let onDismiss: () -> Void
   let content: Content
 
@@ -51,7 +51,7 @@ private struct Navigation<Content: View>: View {
           .padding(.bottom, 12)
       } else if presentationStyle == .navigation {
         NavigationBarSide(
-          positive: willPositive,
+          positive: positive,
           negative: self.dismiss
         )
         .padding(.bottom, 12)
@@ -74,7 +74,7 @@ struct NavigationPreview: PreviewProvider {
         backgroundColor: Color.white,
         title: "NAVIGATION TITLE",
         presentationStyle: .modal,
-        willPositive: {},
+        positive: {},
         onDismiss: {},
         content: VStack {
           Spacer()
@@ -87,7 +87,7 @@ struct NavigationPreview: PreviewProvider {
         backgroundColor: Color.white,
         title: "NAVIGATION TITLE",
         presentationStyle: .navigation,
-        willPositive: {},
+        positive: {},
         onDismiss: {},
         content: VStack {
           Spacer()
@@ -100,7 +100,7 @@ struct NavigationPreview: PreviewProvider {
         backgroundColor: Color.white,
         title: "NAVIGATION TITLE",
         presentationStyle: .empty,
-        willPositive: {},
+        positive: {},
         onDismiss: {},
         content: VStack {
           Spacer()
