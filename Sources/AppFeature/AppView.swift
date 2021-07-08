@@ -1,4 +1,3 @@
-import AppTabFeature
 import SwiftUI
 
 public struct AppView: View {
@@ -6,7 +5,7 @@ public struct AppView: View {
   public init() {}
 
   public var body: some View {
-    AppTabView()
+    Text("")
   }
 }
 

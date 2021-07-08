@@ -11,9 +11,6 @@ let package = Package(
   ],
   products: [
     .library(name: "AppFeature", targets: ["AppFeature"]),
-    .library(name: "AppTabFeature", targets: ["AppTabFeature"]),
-    .library(name: "GroupListFeature", targets: ["GroupListFeature"]),
-    .library(name: "GroupTimelineFeature", targets: ["GroupTimelineFeature"]),
     .library(name: "SettingFeature", targets: ["SettingFeature"]),
     .library(name: "Component", targets: ["Component"]),
     .library(name: "Entity", targets: ["Entity"]),
@@ -29,19 +26,7 @@ let package = Package(
       .exact("1.8.2")),
   ],
   targets: [
-    .target(
-      name: "AppFeature", dependencies: ["AppTabFeature"]),
-    .target(name: "AppTabFeature", dependencies: ["GroupListFeature", "Styleguide"]),
-    .target(
-      name: "GroupListFeature",
-      dependencies: [
-        "Entity",
-        "SettingFeature",
-        "GroupTimelineFeature",
-        .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
-      ]
-    ),
-    .target(name: "GroupTimelineFeature", dependencies: ["Entity", "Component"]),
+    .target(name: "AppFeature", dependencies: []),
     .target(name: "SettingFeature"),
 
     .target(name: "Component", dependencies: ["Entity", "CacheableImage"]),
@@ -55,7 +40,6 @@ let package = Package(
         "__Snapshots__"
       ]
     ),
-
     .target(name: "Entity"),
     .testTarget(
       name: "EntityTests",
@@ -63,7 +47,6 @@ let package = Package(
         .product(name: "SnapshotTesting", package: "SnapshotTesting")
       ]
     ),
-
     .target(name: "Cache"),
     .testTarget(
       name: "CacheTests",
@@ -72,7 +55,6 @@ let package = Package(
         .product(name: "SnapshotTesting", package: "SnapshotTesting"),
       ]
     ),
-
     .target(name: "CacheableImage", dependencies: ["Cache"]),
     .target(name: "Styleguide"),
   ]
