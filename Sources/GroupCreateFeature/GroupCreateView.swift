@@ -15,7 +15,14 @@ public struct GroupCreateView: View {
           NavigationLink(
             destination: GroupNameView(),
             label: {
-              Text("Tapped")
+              HStack {
+                Text("ここにグループの名前を入れます")
+                  .font(.system(size: 20, weight: .bold, design: .default))
+                  .foregroundColor(Color.lump.navy)
+                Spacer()
+              }
+              .padding([.leading, .trailing], 12)
+              .padding([.top, .bottom], 8)
             })
         }
         Section(header: ListHeader(title: "MEMBERS")) {
