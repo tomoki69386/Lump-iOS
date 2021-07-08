@@ -19,6 +19,7 @@ let package = Package(
     .library(name: "Entity", targets: ["Entity"]),
     .library(name: "Cache", targets: ["Cache"]),
     .library(name: "CacheableImage", targets: ["CacheableImage"]),
+    .library(name: "Styleguide", targets: ["Styleguide"]),
   ],
   dependencies: [
     .package(
@@ -78,5 +79,6 @@ let package = Package(
     ),
 
     .target(name: "CacheableImage", dependencies: ["Cache"]),
+    .target(name: "Styleguide"),
   ]
 )
