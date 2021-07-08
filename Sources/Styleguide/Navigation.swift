@@ -3,6 +3,7 @@ import SwiftUI
 public enum NavigationPresentationStyle {
   case navigation
   case modal
+  case empty
 }
 
 extension View {
@@ -44,7 +45,7 @@ private struct Navigation<Content: View>: View {
       
       if presentationStyle == .modal {
         NavigationBarCenter(action: self.dismiss)
-      } else {
+      } else if presentationStyle == .navigation {
         NavigationBarSide(dismiss: self.dismiss)
       }
     }
@@ -73,6 +74,14 @@ struct NavigationPreview: PreviewProvider {
         backgroundColor: Color.white,
         title: "NAVIGATION TITLE",
         presentationStyle: .navigation,
+        onDismiss: {},
+        content: VStack { Spacer(); Text("Content"); Spacer() }
+      )
+      
+      Navigation(
+        backgroundColor: Color.white,
+        title: "NAVIGATION TITLE",
+        presentationStyle: .empty,
         onDismiss: {},
         content: VStack { Spacer(); Text("Content"); Spacer() }
       )
