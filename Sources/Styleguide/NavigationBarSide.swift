@@ -1,14 +1,15 @@
 import SwiftUI
 
 struct NavigationBarSide: View {
-  var dismiss: () -> Void
+  var positive: () -> Void
+  var negative: () -> Void
 
   var body: some View {
     HStack {
       CircleButton(
         foregroundColor: Color.lump.navy,
         backgroundColor: Color.lump.text.tertiary,
-        action: dismiss,
+        action: negative,
         content: {
           Text(Image(systemName: "arrow.left"))
         }
@@ -17,7 +18,7 @@ struct NavigationBarSide: View {
       CircleButton(
         foregroundColor: Color.white,
         backgroundColor: Color.lump.primary,
-        action: {},
+        action: positive,
         content: {
           Text(Image(systemName: "arrow.right"))
         }
@@ -29,7 +30,7 @@ struct NavigationBarSide: View {
 
 struct NavigationBarSidePreview: PreviewProvider {
   static var previews: some View {
-    NavigationBarSide(dismiss: {})
+    NavigationBarSide(positive: {}, negative: {})
       .previewLayout(.sizeThatFits)
   }
 }

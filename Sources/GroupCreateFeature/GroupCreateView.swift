@@ -26,7 +26,8 @@ public struct GroupCreateView: View {
     }
     .navigationStyle(
       title: "GROUP CREATE",
-      presentationStyle: .modal,
+      presentationStyle: .navigation,
+      willPositive: {},
       onDismiss: {}
     )
   }
