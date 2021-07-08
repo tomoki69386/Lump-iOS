@@ -31,12 +31,7 @@ let package = Package(
   targets: [
     .target(
       name: "AppFeature", dependencies: ["AppTabFeature"]),
-    .target(
-      name: "AppTabFeature",
-      dependencies: [
-        "GroupListFeature"
-      ]
-    ),
+    .target(name: "AppTabFeature", dependencies: ["GroupListFeature", "Styleguide"]),
     .target(
       name: "GroupListFeature",
       dependencies: [

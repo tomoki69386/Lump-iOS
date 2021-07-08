@@ -35,8 +35,6 @@ public struct PostInstagramView: View {
           Spacer()
         }
         HStack {
-          Text("2020/01/01")
-            .foregroundColor(.secondary)
           Spacer()
           Button(
             action: {

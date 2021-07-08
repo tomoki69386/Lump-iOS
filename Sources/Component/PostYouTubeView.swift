@@ -32,11 +32,6 @@ public struct PostYouTubeView: View {
             .lineLimit(2)
           Spacer()
         }
-        HStack {
-          Text("2020/01/01")
-            .foregroundColor(.secondary)
-          Spacer()
-        }
       }
       .padding(.init(top: 0, leading: 16, bottom: 0, trailing: 16))
     }
