@@ -45,8 +45,10 @@ private struct Navigation<Content: View>: View {
       
       if presentationStyle == .modal {
         NavigationBarCenter(action: self.dismiss)
+          .padding(.bottom, 12)
       } else if presentationStyle == .navigation {
         NavigationBarSide(dismiss: self.dismiss)
+          .padding(.bottom, 12)
       }
     }
     .background(backgroundColor.ignoresSafeArea())

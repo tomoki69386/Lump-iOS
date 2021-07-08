@@ -1,18 +1,22 @@
 import SwiftUI
+import Styleguide
 
 public struct PlaceholderTextField: View {
 
-  public var placeholder: Text
-  @Binding public var text: String
-  public var onEditingChanged: (Bool) -> Void
-  public var onCommit: () -> Void
+  let alignment: Alignment
+  let placeholder: Text
+  @Binding var text: String
+  var onEditingChanged: (Bool) -> Void
+  var onCommit: () -> Void
 
   public init(
+    alignment: Alignment,
     placeholder: Text,
     text: Binding<String>,
     onEditingChanged: @escaping (Bool) -> Void,
     onCommit: @escaping () -> Void
   ) {
+    self.alignment = alignment
     self.placeholder = placeholder
     self._text = text
     self.onEditingChanged = onEditingChanged
@@ -20,11 +24,11 @@ public struct PlaceholderTextField: View {
   }
 
   public var body: some View {
-    ZStack(alignment: .leading) {
+    ZStack(alignment: alignment) {
       if text.isEmpty {
         placeholder
-          .foregroundColor(Color(UIColor.tertiaryLabel))
-          .font(.title2)
+          .foregroundColor(Color.lump.text.secondary)
+          .font(.system(size: 20, weight: .bold, design: .default))
       }
       TextField(
         "",
@@ -44,6 +48,7 @@ struct PlaceholderTextFieldPreviews: PreviewProvider {
   static var previews: some View {
     Group {
       PlaceholderTextField(
+        alignment: .leading,
         placeholder: Text("Search"),
         text: $text,
         onEditingChanged: { _ in },
@@ -53,6 +58,7 @@ struct PlaceholderTextFieldPreviews: PreviewProvider {
       .previewDisplayName("テキストあり")
 
       PlaceholderTextField(
+        alignment: .leading,
         placeholder: Text("Search"),
         text: $textEmpty,
         onEditingChanged: { _ in },

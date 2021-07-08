@@ -13,6 +13,7 @@ let package = Package(
     .library(name: "AppFeature", targets: ["AppFeature"]),
     .library(name: "SettingFeature", targets: ["SettingFeature"]),
     .library(name: "GroupCreateFeature", targets: ["GroupCreateFeature"]),
+    .library(name: "GroupNameFeature", targets: ["GroupNameFeature"]),
     .library(name: "Component", targets: ["Component"]),
     .library(name: "Entity", targets: ["Entity"]),
     .library(name: "Cache", targets: ["Cache"]),
@@ -29,7 +30,8 @@ let package = Package(
   targets: [
     .target(name: "AppFeature", dependencies: ["GroupCreateFeature"]),
     .target(name: "SettingFeature"),
-    .target(name: "GroupCreateFeature", dependencies: ["Entity", "Component"]),
+    .target(name: "GroupCreateFeature", dependencies: ["Entity", "GroupNameFeature"]),
+    .target(name: "GroupNameFeature", dependencies: ["Component"]),
 
     .target(name: "Component", dependencies: ["Entity", "CacheableImage", "Styleguide"]),
     .testTarget(
