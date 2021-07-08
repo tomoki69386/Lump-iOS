@@ -20,6 +20,7 @@ public struct ListHeader: View {
     }
     .padding([.leading, .trailing], 12)
     .frame(height: 41)
+    .background(Color.white)
   }
 }
 

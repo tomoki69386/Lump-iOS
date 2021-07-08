@@ -12,6 +12,7 @@ let package = Package(
   products: [
     .library(name: "AppFeature", targets: ["AppFeature"]),
     .library(name: "SettingFeature", targets: ["SettingFeature"]),
+    .library(name: "GroupCreateFeature", targets: ["GroupCreateFeature"]),
     .library(name: "Component", targets: ["Component"]),
     .library(name: "Entity", targets: ["Entity"]),
     .library(name: "Cache", targets: ["Cache"]),
@@ -26,8 +27,9 @@ let package = Package(
       .exact("1.8.2")),
   ],
   targets: [
-    .target(name: "AppFeature", dependencies: []),
+    .target(name: "AppFeature", dependencies: ["GroupCreateFeature"]),
     .target(name: "SettingFeature"),
+    .target(name: "GroupCreateFeature", dependencies: ["Entity", "Component"]),
 
     .target(name: "Component", dependencies: ["Entity", "CacheableImage", "Styleguide"]),
     .testTarget(

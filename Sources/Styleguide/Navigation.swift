@@ -35,7 +35,7 @@ private struct Navigation<Content: View>: View {
       HStack {
         Text(title)
           .foregroundColor(Color.lump.navy)
-          .font(.system(size: 20, weight: .bold, design: .default))
+          .font(.system(size: 25, weight: .black, design: .default))
         Spacer()
       }
       .padding([.leading, .trailing], 12)
