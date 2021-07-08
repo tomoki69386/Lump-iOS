@@ -2,7 +2,7 @@ import SwiftUI
 
 struct NavigationBarSide: View {
   var dismiss: () -> Void
-  
+
   var body: some View {
     HStack {
       CircleButton(

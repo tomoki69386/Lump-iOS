@@ -1,14 +1,13 @@
 import Component
-import SwiftUI
-import Styleguide
 import GroupNameFeature
+import Styleguide
+import SwiftUI
 
 public struct GroupCreateView: View {
-  
-  public init(
-  ) {
+
+  public init() {
   }
-  
+
   public var body: some View {
     ScrollView(.vertical) {
       LazyVStack(pinnedViews: [.sectionHeaders]) {

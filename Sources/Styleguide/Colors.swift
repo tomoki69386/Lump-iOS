@@ -1,15 +1,15 @@
 import SwiftUI
 
 extension Color {
-  
+
   public static let lump = Lump()
-  
+
   public struct Lump {
     public let primary = Color.hex(0xFB8989)
     public let navy = Color.hex(0x000060)
-    
+
     public let text = Text()
-    
+
     public struct Text {
       public let primary = Color.primary
       public let secondary = Color.hex(0x000000, opacity: 0.36)

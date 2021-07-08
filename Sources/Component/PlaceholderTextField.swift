@@ -1,5 +1,5 @@
-import SwiftUI
 import Styleguide
+import SwiftUI
 
 public struct PlaceholderTextField: View {
 

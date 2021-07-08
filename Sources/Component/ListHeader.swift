@@ -1,16 +1,16 @@
-import SwiftUI
 import Styleguide
+import SwiftUI
 
 public struct ListHeader: View {
-  
+
   let title: String
-  
+
   public init(
     title: String
   ) {
     self.title = title
   }
-  
+
   public var body: some View {
     HStack {
       Text(title)

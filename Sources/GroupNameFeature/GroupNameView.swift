@@ -1,12 +1,12 @@
 import Component
-import SwiftUI
 import Styleguide
+import SwiftUI
 
 public struct GroupNameView: View {
   @State var text = ""
-  
+
   public init() {}
-  
+
   public var body: some View {
     VStack(alignment: .center) {
       Spacer()

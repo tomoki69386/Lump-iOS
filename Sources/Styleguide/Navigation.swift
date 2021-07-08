@@ -30,7 +30,7 @@ private struct Navigation<Content: View>: View {
   let presentationStyle: NavigationPresentationStyle
   let onDismiss: () -> Void
   let content: Content
-  
+
   var body: some View {
     VStack {
       HStack {
@@ -40,9 +40,9 @@ private struct Navigation<Content: View>: View {
         Spacer()
       }
       .padding([.leading, .trailing], 12)
-      
+
       content
-      
+
       if presentationStyle == .modal {
         NavigationBarCenter(action: self.dismiss)
           .padding(.bottom, 12)
@@ -54,7 +54,7 @@ private struct Navigation<Content: View>: View {
     .background(backgroundColor.ignoresSafeArea())
     .navigationBarHidden(true)
   }
-  
+
   func dismiss() {
     self.onDismiss()
     self.presentationMode.dismiss()
@@ -69,23 +69,35 @@ struct NavigationPreview: PreviewProvider {
         title: "NAVIGATION TITLE",
         presentationStyle: .modal,
         onDismiss: {},
-        content: VStack { Spacer(); Text("Content"); Spacer() }
+        content: VStack {
+          Spacer()
+          Text("Content")
+          Spacer()
+        }
       )
-      
+
       Navigation(
         backgroundColor: Color.white,
         title: "NAVIGATION TITLE",
         presentationStyle: .navigation,
         onDismiss: {},
-        content: VStack { Spacer(); Text("Content"); Spacer() }
+        content: VStack {
+          Spacer()
+          Text("Content")
+          Spacer()
+        }
       )
-      
+
       Navigation(
         backgroundColor: Color.white,
         title: "NAVIGATION TITLE",
         presentationStyle: .empty,
         onDismiss: {},
-        content: VStack { Spacer(); Text("Content"); Spacer() }
+        content: VStack {
+          Spacer()
+          Text("Content")
+          Spacer()
+        }
       )
     }
   }

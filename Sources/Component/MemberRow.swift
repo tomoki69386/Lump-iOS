@@ -1,9 +1,9 @@
 import Entity
-import SwiftUI
 import Styleguide
+import SwiftUI
 
 public struct MemberRow: View {
-  
+
   var mediaType: MediaType
   var name: String
   var imageUrl: String {
@@ -17,7 +17,7 @@ public struct MemberRow: View {
         "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/480px-Instagram_icon.png"
     }
   }
-  
+
   public init(
     mediaType: MediaType,
     name: String
@@ -25,7 +25,7 @@ public struct MemberRow: View {
     self.mediaType = mediaType
     self.name = name
   }
-  
+
   public var body: some View {
     HStack(spacing: 8) {
       CircleImage(imageUrlString: imageUrl)

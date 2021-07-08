@@ -1,12 +1,12 @@
 import SwiftUI
 
 public struct CircleButton: View {
-  
+
   let foregroundColor: Color
   let backgroundColor: Color
   var action: () -> Void
   let content: Text
-  
+
   public init(
     foregroundColor: Color,
     backgroundColor: Color,
@@ -18,12 +18,15 @@ public struct CircleButton: View {
     self.action = action
     self.content = content()
   }
-  
+
   public var body: some View {
-    Button(action: action, label: {
-      content
-        .font(.system(size: 23, weight: .heavy, design: .default))
-    })
+    Button(
+      action: action,
+      label: {
+        content
+          .font(.system(size: 23, weight: .heavy, design: .default))
+      }
+    )
     .foregroundColor(foregroundColor)
     .frame(width: 54, height: 46)
     .background(backgroundColor)
