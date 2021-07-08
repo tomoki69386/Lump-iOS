@@ -1,5 +1,4 @@
 import Component
-import GroupNameFeature
 import Styleguide
 import SwiftUI
 
