@@ -1,9 +1,9 @@
-import CacheableImage
 import Entity
 import SwiftUI
+import Styleguide
 
-public struct PostMemberInfoView: View {
-
+public struct MemberRow: View {
+  
   var mediaType: MediaType
   var name: String
   var imageUrl: String {
@@ -17,28 +17,32 @@ public struct PostMemberInfoView: View {
         "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/480px-Instagram_icon.png"
     }
   }
-
-  public init(mediaType: MediaType, name: String) {
+  
+  public init(
+    mediaType: MediaType,
+    name: String
+  ) {
     self.mediaType = mediaType
     self.name = name
   }
-
+  
   public var body: some View {
     HStack(spacing: 8) {
-      CacheableImage(imageUrl)
-        .frame(width: 44, height: 44)
-        .clipShape(Circle())
+      CircleImage(imageUrlString: imageUrl)
       Text(name)
+        .font(.system(size: 20, weight: .bold, design: .default))
+        .foregroundColor(Color.lump.navy)
       Spacer()
     }
+    .padding([.leading, .trailing], 12)
   }
 }
 
-struct PostMemberInfoViewPreview: PreviewProvider {
+struct MemberRowPreview: PreviewProvider {
   static var previews: some View {
-    ForEach(MediaType.allCases, id: \.self) { mediaType in
-      PostMemberInfoView(mediaType: mediaType, name: "yukos0520")
-        .previewLayout(.sizeThatFits)
+    ForEach(MediaType.allCases, id: \.self) { type in
+      MemberRow(mediaType: type, name: "tomoki_sun")
     }
+    .previewLayout(.sizeThatFits)
   }
 }

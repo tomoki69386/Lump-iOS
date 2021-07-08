@@ -13,6 +13,7 @@ public struct SearchTextField: View {
         .padding(.leading, 16)
 
       PlaceholderTextField(
+        alignment: .center,
         placeholder: Text("Search"),
         text: $text,
         onEditingChanged: { _ in },
