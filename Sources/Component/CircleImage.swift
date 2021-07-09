@@ -33,7 +33,8 @@ public struct CircleImage: View {
   public var body: some View {
     VStack {
       if let imageName = imageName {
-        Image(imageName)
+        Image(imageName, bundle: .module)
+          .resizable()
           .frame(width: 46, height: 46)
       } else if let imageUrlString = imageUrlString {
         CacheableImage(imageUrlString)
