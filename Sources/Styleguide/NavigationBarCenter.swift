@@ -3,19 +3,19 @@ import SwiftUI
 struct NavigationBarCenter: View {
   var presentationStyle: NavigationPresentationStyle
   var action: () -> Void
-  
+
   var foregroundColor: Color {
     presentationStyle == .positive
       ? Color.white
       : Color.lump.navy
   }
-  
+
   var backgroundColor: Color {
     presentationStyle == .positive
       ? Color.lump.primary
       : Color.lump.text.tertiary
   }
-  
+
   var body: some View {
     HStack {
       Spacer()

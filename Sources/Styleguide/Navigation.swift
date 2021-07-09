@@ -46,7 +46,7 @@ private struct Navigation<Content: View>: View {
       .padding([.top, .leading, .trailing], 12)
 
       content
-      
+
       switch presentationStyle {
       case .positive, .negative:
         NavigationBarCenter(
