@@ -32,7 +32,7 @@ public struct GroupCreateView: View {
     }
     .navigationStyle(
       title: "GROUP CREATE",
-      presentationStyle: .navigation,
+      presentationStyle: .side,
       positive: {},
       onDismiss: {}
     )

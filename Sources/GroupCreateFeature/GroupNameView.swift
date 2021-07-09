@@ -22,7 +22,7 @@ public struct GroupNameView: View {
     .padding([.leading, .trailing], 12)
     .navigationStyle(
       title: "GROUP NAME",
-      presentationStyle: .modal,
+      presentationStyle: .positive,
       positive: {},
       onDismiss: {}
     )

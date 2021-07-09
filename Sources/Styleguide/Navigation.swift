@@ -1,8 +1,9 @@
 import SwiftUI
 
-public enum NavigationPresentationStyle {
-  case navigation
-  case modal
+public enum NavigationPresentationStyle: CaseIterable {
+  case positive
+  case negative
+  case side
   case empty
 }
 
@@ -45,16 +46,20 @@ private struct Navigation<Content: View>: View {
       .padding([.top, .leading, .trailing], 12)
 
       content
-
-      if presentationStyle == .modal {
-        NavigationBarCenter(action: self.dismiss)
-          .padding(.bottom, 12)
-      } else if presentationStyle == .navigation {
+      
+      switch presentationStyle {
+      case .positive, .negative:
+        NavigationBarCenter(
+          presentationStyle: presentationStyle,
+          action: self.dismiss
+        )
+      case .side:
         NavigationBarSide(
           positive: positive,
           negative: self.dismiss
         )
-        .padding(.bottom, 12)
+      case .empty:
+        EmptyView()
       }
     }
     .background(backgroundColor.ignoresSafeArea())
@@ -69,37 +74,11 @@ private struct Navigation<Content: View>: View {
 
 struct NavigationPreview: PreviewProvider {
   static var previews: some View {
-    Group {
+    ForEach(NavigationPresentationStyle.allCases, id: \.self) { presentationStyle in
       Navigation(
         backgroundColor: Color.white,
         title: "NAVIGATION TITLE",
-        presentationStyle: .modal,
-        positive: {},
-        onDismiss: {},
-        content: VStack {
-          Spacer()
-          Text("Content")
-          Spacer()
-        }
-      )
-
-      Navigation(
-        backgroundColor: Color.white,
-        title: "NAVIGATION TITLE",
-        presentationStyle: .navigation,
-        positive: {},
-        onDismiss: {},
-        content: VStack {
-          Spacer()
-          Text("Content")
-          Spacer()
-        }
-      )
-
-      Navigation(
-        backgroundColor: Color.white,
-        title: "NAVIGATION TITLE",
-        presentationStyle: .empty,
+        presentationStyle: presentationStyle,
         positive: {},
         onDismiss: {},
         content: VStack {
