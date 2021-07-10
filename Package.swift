@@ -31,7 +31,9 @@ let package = Package(
     .target(name: "SettingFeature"),
     .target(name: "GroupCreateFeature", dependencies: ["Entity", "Component"]),
 
-    .target(name: "Component", dependencies: ["Entity", "CacheableImage", "Styleguide"], resources: [.process("Resources")]),
+    .target(
+      name: "Component", dependencies: ["Entity", "CacheableImage", "Styleguide"],
+      resources: [.process("Resources")]),
     .testTarget(
       name: "ComponentTests",
       dependencies: [
